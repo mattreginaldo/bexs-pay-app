@@ -1,0 +1,170 @@
+@import "styles/variables.scss";
+
+.checkout {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: theme("screens.lg")) {
+    flex-direction: column;
+  }
+
+  &__left {
+    background-color: $primary-color;
+    width: 30%;
+
+    @media (max-width: theme("screens.lg")) {
+      width: 100%;
+      height: 40%;
+
+      transition: 0.25s ease-in;
+      transition-property: width, height;
+    }
+
+    &__content {
+      padding: 20px;
+      height: 75vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media (max-width: theme("screens.lg")) {
+        height: 55vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__change-payment-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-top: 20px;
+
+        svg {
+          path {
+            fill: $white-color;
+          }
+        }
+
+        span {
+          font-size: 0.8125rem;
+          font-weight: 400;
+          color: $white-color;
+        }
+      }
+
+      &__upside {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        padding-top: 10px;
+
+        &__touchable {
+          position: absolute;
+          left: 20px;
+          top: 30px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+
+            path {
+              fill: $white-color;
+            }
+          }
+        }
+
+        span {
+          font-size: 0.8125rem;
+          font-weight: 700;
+          color: $white-color;
+        }
+      }
+
+      &__credit-card {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 25px;
+
+        z-index: 9;
+
+        @media (max-width: theme("screens.sm")) {
+          gap: 0;
+        }
+
+        &__new-credit-card-label {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          @media (max-width: theme("screens.lg")) {
+            justify-content: center;
+          }
+
+          svg {
+            width: 80px;
+            height: 80px;
+
+            @media (max-width: theme("screens.sm")) {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          span {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: $white-color;
+
+            @media (min-width: theme("screens.lg")) {
+              padding-right: 65px;
+            }
+
+            @media (max-width: theme("screens.sm")) {
+              font-size: 1rem;
+              word-wrap: break-word;
+              width: 230px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    background-color: $white-color;
+    width: 70%;
+
+    @media (max-width: theme("screens.lg")) {
+      width: 100%;
+      height: 60%;
+
+      transition: 0.25s ease-in;
+      transition-property: width, height;
+    }
+
+    &__content {
+      padding: 20px 20px 20px 235px;
+
+      @media (max-width: theme("screens.lg")) {
+        padding: 20px;
+      }
+
+      &__upside {
+        &__steps {
+          padding-top: 20px;
+        }
+      }
+
+      &__form {
+        padding-top: 115px;
+      }
+    }
+  }
+}
