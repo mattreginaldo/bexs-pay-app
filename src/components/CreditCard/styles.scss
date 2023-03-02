@@ -1,0 +1,58 @@
+@import "styles/variables.scss";
+
+.credit-card {
+  background: url("/assets/images/credit-card.png"),
+    radial-gradient(
+      73.06% 104.31% at 14.59% 58.06%,
+      #bfbfbf 0%,
+      #a8a8a8 33.7%,
+      #727272 100%
+    );
+
+  border-radius: 15px;
+
+  filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.349));
+
+  height: 302px;
+  width: 492px;
+
+  margin: 0 20px;
+
+  transition: transform 0.25s ease-in;
+
+  @media (max-width: theme("screens.sm")) {
+    transform: scale(0.85);
+
+    height: 216px;
+    width: 354px;
+  }
+
+  &__data {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    gap: 30px;
+
+    padding: 40px;
+
+    height: 100%;
+    width: 100%;
+
+    &__name-and-date {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 1.375rem;
+      color: $white-color;
+
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+
+      @media (max-width: theme("screens.sm")) {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
