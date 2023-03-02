@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "styles/tailwind.scss";
+
+import Checkout from "pages/Checkout";
+
+import "styles/main.scss";
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>React App</h1>
+    <Checkout />
   </React.StrictMode>,
   document.getElementById("root")
 );
