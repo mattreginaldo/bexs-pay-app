@@ -1,0 +1,58 @@
+@import "styles/variables.scss";
+
+.steps {
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+
+  &__step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 35px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &__content {
+      display: flex;
+      gap: 10px;
+
+      span {
+        font-weight: 400;
+        font-size: 0.8125rem;
+        color: $primary-color;
+      }
+
+      &__step-number {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1.3px solid $primary-color;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        strong {
+          font-weight: 700;
+          font-size: 0.8125rem;
+          color: $primary-color;
+        }
+      }
+    }
+
+    &__chevron {
+      transform: rotate(180deg);
+
+      svg {
+        path {
+          fill: $primary-color;
+        }
+      }
+    }
+  }
+}
