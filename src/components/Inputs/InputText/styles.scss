@@ -1,0 +1,45 @@
+@import "styles/variables.scss";
+
+.input-text {
+  label {
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    display: inline-block;
+  }
+
+  span {
+    padding: 10px 0;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.2s;
+    transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    opacity: 0.5;
+
+    color: $silver-sand-color;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  input {
+    width: 100%;
+
+    padding: 10px;
+    outline: none;
+    border-bottom: 1px solid $silver-sand-color;
+
+    color: $black-olive-color;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  input:focus + span,
+  input:not(:placeholder-shown) + span {
+    opacity: 1;
+    transform: scale(0.75) translateY(-100%) translateX(-30px);
+    padding: 0 10px;
+  }
+}
