@@ -13,7 +13,7 @@
 
   &__left {
     background-color: $primary-color;
-    width: 30%;
+    width: 400px;
 
     @media (max-width: theme("screens.lg")) {
       width: 100%;
@@ -139,7 +139,7 @@
 
   &__right {
     background-color: $white-color;
-    width: 70%;
+    flex: 1;
 
     @media (max-width: theme("screens.lg")) {
       width: 100%;
@@ -150,7 +150,7 @@
     }
 
     &__content {
-      padding: 20px 20px 20px 235px;
+      padding: 20px 20px 20px 150px;
 
       @media (max-width: theme("screens.lg")) {
         padding: 20px;
@@ -163,7 +163,7 @@
       }
 
       &__form {
-        padding-top: 115px;
+        padding-top: 105px;
       }
     }
   }

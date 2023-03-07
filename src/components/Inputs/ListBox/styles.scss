@@ -1,0 +1,77 @@
+@import "styles/variables.scss";
+
+.select-box {
+  position: relative;
+
+  select {
+    width: 100%;
+    padding: 10px 0 5px;
+    cursor: pointer;
+    outline: none;
+    border-bottom: 1px solid $silver-sand-color;
+
+    font-weight: 400;
+    font-size: 1rem;
+    color: $black-olive-color;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    option {
+      font-weight: 400;
+      font-size: 1rem;
+      color: $black-olive-color;
+
+      &:first-of-type {
+        display: none;
+      }
+    }
+  }
+
+  span {
+    left: 0;
+    top: 7px;
+    position: absolute;
+
+    font-weight: 400;
+    font-size: 1rem;
+    color: $silver-sand-color;
+
+    pointer-events: none;
+    transition: top 0.2s ease;
+
+    &.has-value {
+      top: -20px;
+      font-size: 0.75rem;
+    }
+  }
+
+  &__chevron {
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    pointer-events: none;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      fill: $primary-color;
+
+      transform: rotate(-90deg);
+      transition: transform 0.25s ease-in-out;
+    }
+
+    &.is-open {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+// .select:focus + span,
+// .select:not(:placeholder-shown) + label {
+//   top: -1.5rem;
+//   font-size: 0.75rem;
+// }
