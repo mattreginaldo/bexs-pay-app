@@ -5,3 +5,60 @@ $black-olive-color: #3c3c3c;
 $silver-sand-color: #c6c6c6;
 
 $error-color: #eb5757;
+
+// Credit Card
+$default-bg: radial-gradient(
+  73.06% 104.31% at 14.59% 58.06%,
+  #bfbfbf 0%,
+  #a8a8a8 33.7%,
+  #727272 100%
+);
+
+$visa-bg: radial-gradient(
+  73.06% 104.31% at 14.59% 58.06%,
+  #5a7589 0%,
+  #436175 33.7%,
+  #315266 57.29%,
+  #124768 100%
+);
+
+$mastercard-bg: radial-gradient(
+  73.06% 104.31% at 14.59% 58.06%,
+  rgba(245, 90, 90, 1) 34%,
+  rgba(255, 159, 101, 1) 100%
+);
+
+$american-express-bg: radial-gradient(
+  73.06% 104.31% at 14.59% 58.06%,
+  rgba(108, 196, 238, 1) 0%,
+  rgba(155, 212, 245, 1) 33.7%,
+  rgba(46, 119, 187, 1) 100%
+);
+
+$discover-bg: radial-gradient(
+  73.06% 104.31% at 14.59% 58.06%,
+  rgba(229, 92, 32, 1) 0%,
+  rgba(229, 92, 32, 1) 33.7%,
+  rgba(249, 160, 33, 1) 100%
+);
+
+$maestro-bg: radial-gradient(
+  circle,
+  rgba(115, 117, 207, 1) 0%,
+  rgba(0, 162, 229, 1) 100%
+);
+
+$elo-bg: linear-gradient(
+  75deg,
+  rgba(79, 193, 219, 1) 0%,
+  rgba(223, 53, 18, 1) 50%,
+  rgba(236, 161, 31, 1) 100%
+);
+
+$hipercard-bg: linear-gradient(
+  100deg,
+  rgba(235, 142, 142, 1) 0%,
+  rgba(158, 16, 16, 1) 100%
+);
+
+$url-credit-card: url("/assets/images/credit-card.png");

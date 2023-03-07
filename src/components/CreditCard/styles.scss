@@ -1,13 +1,26 @@
 @import "styles/variables.scss";
 
+$cardTypes: (
+  "default": $default-bg,
+  "visa": $visa-bg,
+  "mastercard": $mastercard-bg,
+  "american-express": $american-express-bg,
+  "diners-club": $default-bg,
+  "discover": $discover-bg,
+  "jcb": $default-bg,
+  "maestro": $maestro-bg,
+  "elo": $elo-bg,
+  "mir": $default-bg,
+  "hiper": $hipercard-bg,
+  "hipercard": $hipercard-bg,
+);
+
 .credit-card {
-  background: url("/assets/images/credit-card.png"),
-    radial-gradient(
-      73.06% 104.31% at 14.59% 58.06%,
-      #bfbfbf 0%,
-      #a8a8a8 33.7%,
-      #727272 100%
-    );
+  @each $name, $color in $cardTypes {
+    &.#{$name} {
+      background: $url-credit-card, $color;
+    }
+  }
 
   border-radius: 15px;
 
@@ -15,8 +28,6 @@
 
   height: 302px;
   width: 492px;
-
-  margin: 0 20px;
 
   transition: transform 0.25s ease-in;
 
