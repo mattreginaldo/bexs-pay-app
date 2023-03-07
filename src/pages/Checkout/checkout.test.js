@@ -1,5 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
+import user from "@testing-library/user-event";
 
 import Checkout from ".";
 
@@ -38,5 +39,37 @@ describe("Checkout component loads correctly and show elements and labels", () =
     expect(newCardLabel.innerHTML).toContain(
       "Adicione um novo cartão de crédito"
     );
+  });
+});
+
+describe("Testing checkout form", () => {
+  test("Should continue checkout form with success", async () => {
+    const { container } = render(<Checkout />);
+
+    const inputNumber = container.querySelector(`input[name="number"]`);
+    const inputName = container.querySelector(`input[name="name"]`);
+    const inputValidateDate = container.querySelector(
+      `input[name="validateDate"]`
+    );
+    const inputCVV = container.querySelector(`input[name="cvv"]`);
+    const inputInstallments = container.querySelector(
+      `select[name="installments"]`
+    );
+
+    await user.type(inputNumber, "5575 8169 2593 3858");
+    await user.type(inputValidateDate, "04/24");
+    await user.type(inputName, "MATEUS REGINALDO");
+    await user.type(inputCVV, "667");
+    await user.selectOptions(inputInstallments, "12");
+
+    expect(inputNumber.value).toBe("5575 8169 2593 3858");
+    expect(inputName.value).toBe("MATEUS REGINALDO");
+    expect(inputValidateDate.value).toBe("04/24");
+    expect(inputCVV.value).toBe("667");
+    expect(inputInstallments.value).toBe("12");
+
+    const checkoutForm = screen.queryByTestId("checkout-form-button");
+
+    user.click(checkoutForm);
   });
 });
