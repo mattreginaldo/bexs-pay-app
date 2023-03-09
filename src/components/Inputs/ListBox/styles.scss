@@ -29,7 +29,7 @@
     }
   }
 
-  span {
+  label {
     left: 0;
     top: 7px;
     position: absolute;
@@ -68,10 +68,22 @@
       }
     }
   }
-}
 
-// .select:focus + span,
-// .select:not(:placeholder-shown) + label {
-//   top: -1.5rem;
-//   font-size: 0.75rem;
-// }
+  &.error {
+    input {
+      border-bottom: 1px solid $error-color;
+    }
+  }
+
+  &--error {
+    color: $error-color;
+    font-weight: 400;
+    font-size: 0.75rem;
+
+    transition: bottom 1s ease-in-out;
+
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+  }
+}
