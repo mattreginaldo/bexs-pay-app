@@ -39,19 +39,37 @@ $cardTypes: (
   }
 
   &__data {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-end;
-    gap: 30px;
+    display: grid;
 
     padding: 40px;
 
     height: 100%;
     width: 100%;
 
-    &__name-and-date {
+    @media (max-width: theme("screens.sm")) {
+      padding: 25px;
+    }
+
+    svg {
+      width: 60px;
+      height: 60px;
+      
+      @media (max-width: theme("screens.sm")) {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    &__bottom {
       display: flex;
-      justify-content: space-between;
+      flex-flow: column nowrap;
+      align-self: flex-end;
+      gap: 30px;
+
+      &__name-and-date {
+        display: flex;
+        justify-content: space-between;
+      }
     }
 
     span {
