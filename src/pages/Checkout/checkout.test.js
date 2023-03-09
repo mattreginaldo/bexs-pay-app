@@ -43,7 +43,7 @@ describe("Checkout component loads correctly and show elements and labels", () =
 });
 
 describe("Testing checkout form", () => {
-  test("Should continue checkout form with success", async () => {
+  test("Should fill in the fields correctly and the request should be rejected.", async () => {
     const { container } = render(<Checkout />);
 
     const inputNumber = container.querySelector(`input[name="number"]`);
@@ -71,5 +71,13 @@ describe("Testing checkout form", () => {
     const checkoutForm = screen.queryByTestId("checkout-form-button");
 
     user.click(checkoutForm);
+
+    var apiFunc = jest.spyOn(global, "fetch").mockImplementationOnce(() => {
+      return Promise.resolve({
+        json: () => Promise.reject({ data: {}, errors: [] }),
+      });
+    });
+
+    expect(apiFunc).toHaveBeenCalled;
   });
 });
