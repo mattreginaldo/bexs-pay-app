@@ -156,7 +156,7 @@ const Checkout = ({ totalValue }: Props) => {
               />
             </div>
 
-            <div className="mt-6">
+            <div className="mt-10">
               <ListBox
                 placeholder="Número de parcelas"
                 control={control}
